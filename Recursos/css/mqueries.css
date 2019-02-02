@@ -1,0 +1,249 @@
+@media only screen and (max-width:1024px){
+
+
+/* ==============================
+         Registra
+=================================*/
+
+.registra img {
+   width: 28%;
+ }
+
+ 
+
+/* ==============================
+          Planes 
+=================================*/
+
+.plan-contenedor{
+    width: 80%;
+}
+
+
+}
+
+@media only screen and (max-width:768px){
+
+
+/* ==============================
+          Caracteristicas
+=================================*/
+
+.c-info{
+
+    width: 90%;
+  
+}
+
+
+/* ==============================
+         Registra
+=================================*/
+
+.registra img {
+    width: 38%;
+  }
+ 
+
+  
+/* ==============================
+          Ciudades
+=================================*/
+
+
+.ciudad .cuartos { 
+    width: 22%;
+    margin-left: 2.5%;
+}
+
+.cuartos p {
+    line-height: 25px;
+}
+
+
+
+/* ==============================
+          Planes 
+=================================*/
+
+
+.plan-contenedor{
+    width: 100%;
+}
+
+
+/* ==============================
+          Footer 
+=================================*/
+
+.politicas{
+    line-height: 30px;
+}
+
+.politicas::after{
+    margin: 5px auto;
+}
+
+footer .socios{
+    left:15%;
+    top:50%;
+    width: 60%;
+}
+
+footer .social-media{
+    top: 60%;
+    right: 15%;
+}
+
+}
+
+
+@media only screen and (max-width:480px){
+
+
+/* ==============================
+          headings
+=================================*/
+
+h1{
+    font-size:1.5rem;
+}
+
+h2{
+    padding-top: 50px;
+}
+
+
+
+/* ==============================
+              header
+=================================*/
+
+
+nav{
+
+    width: 90%;}
+
+.nav-principal a{
+    margin-left:10px;
+    font-size:0.9rem;
+
+}
+
+
+/* ==============================
+          Caracteristicas
+=================================*/
+.caracteristicas{
+   
+    text-align: center;}
+
+
+
+.caracteristicas i{
+    padding-top:20px;
+}
+
+
+
+/* ==============================
+          Destacadas
+=================================*/
+.f-contenedor li{
+
+width: 50%;
+}
+
+
+/* ==============================
+         Registra
+=================================*/
+
+
+.registra-contenedor p{ 
+
+    padding: 5px 0px;
+}
+
+
+.registra-contenedor a{ 
+    margin-top:10px;
+    margin-left:40px;
+     }
+
+
+     .registra img{
+width: 46%;}
+
+
+
+/* ==============================
+          Ciudades
+=================================*/
+
+.ciudad .cuartos{
+    width: 46%;
+    margin-left:2%;
+}
+
+
+
+
+/* ==============================
+          Planes 
+=================================*/
+
+.plan-cuerpo p{
+    display:none;
+}
+
+.plan-cuerpo a{
+    margin: 0px auto;
+    margin-bottom: 10px;
+    padding: 0px 0px;
+}
+
+.modulo-plan{
+    width: 32%;
+    margin:0px;
+}
+
+.plan-titulo{
+    margin-bottom:0px;
+}
+
+.plan-contenedor{
+    padding-top:20px;
+}
+
+
+
+
+/* ==============================
+          Footer 
+=================================*/
+
+.politicas{
+    width: 95%;
+}
+
+
+.politicas li{
+    padding-left:5px;
+}
+
+
+.politicas::after{
+    display: none;
+}
+
+footer .socios{
+    left:5%;
+    
+}
+
+footer .social-media{
+    right: 5%;
+}
+
+}
