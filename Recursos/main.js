@@ -1,24 +1,27 @@
 $(function() {
 
-    console.log("working");
+    
+
+
+
 
 
 $('#happy').click(function(){
 
-    $(':root').css('--brand-color','yellow');
-    $('.wrapper-header').css('background-image','url(Recursos/css/imagenes/Alex2.jpg)')
+    $(':root').css('--brand-color','#f1c40f');
+    $('.wrapper-header').css('background-image','url(Recursos/css/imagenes/Alex.jpg)')
 })
 
 $('#mad').click(function(){
 
-    $(':root').css('--brand-color','red');
+    $(':root').css('--brand-color','#e74c3c');
     $('.wrapper-header').css('background-image','url(Recursos/css/imagenes/mad.jpg)')
 })
 
 $('#peace').click(function(){
 
-    $(':root').css('--brand-color','#07c063');
-    $('.wrapper-header').css('background-image','url(Recursos/css/imagenes/Alex.jpg)')
+    $(':root').css('--brand-color','#2ecc71');
+    $('.wrapper-header').css('background-image','url(Recursos/css/imagenes/forest.jpg)')
 })
 
 
@@ -54,6 +57,32 @@ $('.arrow-down').click(function(){
 
     $("HTML, BODY").animate({ scrollTop: 750 }, 1000); });
     
+
+
+
+//show menu depending the position of the screen
+
+window.onscroll = function (e) {  
+let position = $(".caracteristicas");
+    console.log(position[0].offsetTop);
+    console.log(window.pageYOffset);
+
+if(position[0].offsetTop<window.pageYOffset){
+    $('nav').show("fast");
+} else {
+    $('nav').hide(1000);
+}
+    
+
+if(position[0].offsetTop-200 < window.pageYOffset && window.pageYOffset<800  ){
+
+$(".c-info").show(2000);
+
+} else{
+   // $(".c-info").hide(3000);
+}
+    } 
+
 
 
 });

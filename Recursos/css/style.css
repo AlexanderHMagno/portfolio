@@ -96,7 +96,7 @@ header{
 
 .arrow-down{
     position: absolute;
-    bottom: 5%;
+    bottom: 10px;
     left:0px;
     right: 0px;
     width: 20px;
@@ -171,11 +171,17 @@ color:white;
 
 
 nav{
-
-    width: 80%;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
     margin:auto;
-    padding-top:20px;
     z-index: 9999;
+    background-color: var(--brand-color);
+    opacity: 0.8;
+    
 }
 
 .logo{
@@ -196,8 +202,9 @@ background-attachment: fixed;
 }
 
 .nav-principal{
-    padding-top:40px;
+    padding:10px;
     float: right;
+    
 }
 
 .nav-principal li{
@@ -207,7 +214,8 @@ background-attachment: fixed;
 .nav-principal a{
 
     text-decoration:none;
-    color:white;
+    color: white;
+    font-weight: bold;
     margin-left: 40px;
     text-transform: uppercase;
     border-bottom: 1px solid transparent;
@@ -222,13 +230,16 @@ background-attachment: fixed;
 
 .mood{
     display: none;
+    overflow: auto;
 }
 /* ==============================
           Caracteristicas
 =================================*/
 .caracteristicas{
    
-overflow:auto;}
+overflow:auto;
+
+}
 
 
     .c-paragrafo{
@@ -243,6 +254,7 @@ overflow:auto;}
     padding-top:60px;
     width: 80%;
     margin:auto;
+    display: none;
 }
 
 .col{
@@ -311,8 +323,9 @@ overflow:auto;}
 }
 
 .f-contenedor img:hover{
-    transform:scale(1);
+    transform:scale(0.7);
     opacity: 1;
+    cursor: pointer;
 }
 
 /* ==============================
