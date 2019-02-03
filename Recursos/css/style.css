@@ -44,6 +44,7 @@ h1, h2,h3{
 h1{
     color:white;
     font-size:2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -85,7 +86,6 @@ p{
               header
 =================================*/
 header{
-    background-image: url('imagenes/Alex2.jpg');
     background: linear-gradient(var(--brand-color), rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712), var(--brand-color));
   
     height: 100vh;
@@ -94,11 +94,29 @@ header{
     overflow: hidden;
 }
 
+.arrow-down{
+    position: absolute;
+    bottom: 5%;
+    left:0px;
+    right: 0px;
+    width: 20px;
+    margin: auto;
+}
+
+.arrow-down img{
+    width: 100%;
+}
+
+.arrow-down img:hover{
+    width: 100%;
+    cursor: pointer;
+    border-top: 5px solid var(--brand-color);
+}
 
 .titulo-box{
     position: absolute;
     width: 80%;
-    top:50%;
+    top:40%;
     left:0px;
     right: 0px;
     margin:auto;
@@ -107,8 +125,13 @@ header{
 
 }
 
+.titulo-box h1{
+    font-size: 3rem;
+    margin-bottom: 0px;
+}
+
 .titulo-box h2{
-    padding-top:20px; 
+    padding-top:10px; 
 }
 
 .titulo-box h3:hover{
@@ -152,6 +175,7 @@ nav{
     width: 80%;
     margin:auto;
     padding-top:20px;
+    z-index: 9999;
 }
 
 .logo{
@@ -167,6 +191,7 @@ background-size:cover;
 background-position: center;
 overflow: hidden;
 height: 100vh;
+background-attachment: fixed;
 
 }
 
@@ -193,6 +218,10 @@ height: 100vh;
 
 .nav-principal a:hover{
     border-bottom: 1px solid var(--brand-color);
+}
+
+.mood{
+    display: none;
 }
 /* ==============================
           Caracteristicas
