@@ -253,6 +253,15 @@ background-attachment: fixed;
 .mood h3{
     cursor: pointer;
 }
+
+/* ==============================
+        pixabay-section
+=================================*/
+
+
+.pixabay-section{
+    display: none;
+}
 /* ==============================
           Caracteristicas
 =================================*/
@@ -310,6 +319,7 @@ overflow:auto;
     list-style-type: none;
    
 }
+
 
 
 .f-contenedor li{
