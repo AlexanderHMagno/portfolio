@@ -45,7 +45,7 @@ $('.mood-menu').click(function(){
 
 $('#choseMode').click(function(){
 
-    $('.mood').toggle();
+    $('.mood').css('display','flex');
     });
 
 

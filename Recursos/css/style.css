@@ -199,6 +199,7 @@ overflow: hidden;
 height: 100vh;
 background-attachment: fixed;
 
+
 }
 
 .nav-principal{
@@ -228,9 +229,29 @@ background-attachment: fixed;
     border-bottom: 1px solid var(--brand-color);
 }
 
+.menu-background{
+    position: relative;
+    
+}
+
 .mood{
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: auto;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.893);
+    z-index: 9999;
+    color: white;
+   
+}
+
+.mood h3{
+    cursor: pointer;
 }
 /* ==============================
           Caracteristicas
