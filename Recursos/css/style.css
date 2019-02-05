@@ -27,6 +27,7 @@ html{
     font-size:16px;
     text-rendering: optimizeLegibility;
     color:black;
+    min-width: 400px;
 }
 
 
@@ -288,7 +289,50 @@ background-attachment: fixed;
 
 .pixabay-section{
     display: none;
+    height: 100vh;
+    
 }
+
+
+.mood-resume{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+
+.pixabayContenedor h5{
+    margin-bottom: 20px;
+}
+
+.mood-resume h3{
+    margin-bottom: 0px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.mood-resume h3:hover{
+    background: rgba(128, 128, 128, 0.247);
+}
+
+
+/*just for pictures of user*/
+
+.random-size{
+    width: 150px !important;
+    border-radius: 50%;
+    position: absolute;
+    left:0px;
+    right: 0px;
+}
+
+.random-h3{
+    text-align: center;
+}
+
 /* ==============================
           Caracteristicas
 =================================*/
