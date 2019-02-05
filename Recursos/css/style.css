@@ -187,7 +187,7 @@ nav{
     width: 100%;
     margin:auto;
     z-index: 9999;
-    background-color: var(--brand-color);
+   /* background-color: var(--brand-color);*/
     opacity: 0.8;
     
 }
@@ -223,7 +223,7 @@ background-attachment: fixed;
 .nav-principal a{
 
     text-decoration:none;
-    color: white;
+    color: var(--brand-color);
     font-weight: bold;
     margin-left: 40px;
     text-transform: uppercase;

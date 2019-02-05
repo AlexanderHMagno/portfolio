@@ -47,25 +47,30 @@ $('#choseMode').click(function(){
     $('.mood').css('display','flex');
     });
 
+// nav options 
+
+
+
+
 
 //move the screen depending in the position 
 
 
 
 $('.arrow-down').click(function(){
-    $("HTML, BODY").animate({ scrollTop: 700 }, 1000); });
+    $("HTML, BODY").animate({ scrollTop: $('.pixabay-section')[0].offsetTop }, 1000); });
     
 
 //show menu depending the position of the screen
 
 window.onscroll = function (e) {  
-let position = $(".caracteristicas");
+let position = $(".pixabay-section");
    
 //it will detect the position for showing the menu
-position[0].offsetTop<window.pageYOffset?$('nav').show("fast"):$('nav').hide(1000);
+position[0].offsetTop-10<window.pageYOffset?$('nav').show("fast"):$('nav').hide(1000);
 
 //it will show the characteristics
-(position[0].offsetTop-200 < window.pageYOffset && window.pageYOffset<1200)?$(".c-info").show(2000):""  /* $(".c-info").hide(3000)*/;
+($('.caracteristicas')[0].offsetTop-200 < window.pageYOffset)?$(".c-info").show(2000):""  /* $(".c-info").hide(3000)*/;
 
     } 
 
@@ -112,6 +117,8 @@ throw err;
 }
 
 
+//random user
+
 $('.user-images').click(function(){
    $(".pixabayContenedor").html("");
    $(this).css('background','rgba(128, 128, 128, 0.247');
@@ -120,7 +127,7 @@ $('.user-images').click(function(){
 
 
     $.ajax({
-        url: 'https://randomuser.me/api/?results=12',
+        url: 'https://randomuser.me/api/?results=8',
         dataType: 'json',
         success: function(data) {
     
@@ -128,7 +135,7 @@ $('.user-images').click(function(){
         $(".pixabayContenedor").html("");
         $(".pixabayContenedor").append('<h5 class=\'random-h3\'>*Users who have chosen this mood</h5>');
         data.results.forEach(element => {
-     
+       console.log(element.picture.large);
        $(".pixabayContenedor").append("<li class=\"cuartos\"><a><img src=\""+element.picture.large+" \"class='random-size'></a><h3 class='random-h3'>"+element.name.first+" "+element.name.last +"</h3></li>")
       
         });
