@@ -95,23 +95,30 @@ header{
 }
 
 .arrow-down{
+    display: none;
     position: absolute;
     bottom: 10px;
     left:0px;
     right: 0px;
     width: 20px;
     margin: auto;
+    cursor: pointer;
+    animation-name: arrowdown;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
 }
 
 .arrow-down img{
     width: 100%;
 }
 
-.arrow-down img:hover{
-    width: 100%;
-    cursor: pointer;
-    border-top: 5px solid var(--brand-color);
-}
+
+@keyframes arrowdown {
+    0% {bottom : 30px; border-top: 2px solid var(--brand-color);}
+    100% {bottom : 18px; border-top: 2px solid var(--brand-color);}
+  }
+
+
 
 .titulo-box{
     position: absolute;
@@ -254,6 +261,26 @@ background-attachment: fixed;
     cursor: pointer;
 }
 
+.fa-dice-d20{
+    color:gold;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    
+    
+}
+
+@keyframes example {
+    0% {color: var(--brand-color);}
+    25% {color: white;transform: rotate(15deg);}
+    50% {color: white;transform: rotate(0deg);}
+    75% {color: white;transform: rotate(-15deg);}
+    100% {color: var(--brand-color);}
+  }
+
+
+
 /* ==============================
         pixabay-section
 =================================*/
@@ -268,6 +295,7 @@ background-attachment: fixed;
 .caracteristicas{
    
 overflow:auto;
+text-align: center;
 
 }
 
@@ -298,7 +326,7 @@ overflow:auto;
     font-size:2.5rem;
     color:var(--brand-color);
     text-align: center;
-    margin-bottom:30px;
+    margin-bottom:10px;
 }
 
 

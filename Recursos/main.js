@@ -81,6 +81,7 @@ $.ajax({
 url: url_image,
 method: 'GET',
 }).done(function(img_search) {
+  $('.arrow-down').css('display','block');
   $(".pixabayContenedor").html("");
   $(".pixabay-title").html(`${mood} mood`);
   $(".pixabay-section").css('display','block');
