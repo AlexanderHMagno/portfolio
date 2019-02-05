@@ -53,7 +53,7 @@ $('#choseMode').click(function(){
 
 
 $('.arrow-down').click(function(){
-    $("HTML, BODY").animate({ scrollTop: 750 }, 1000); });
+    $("HTML, BODY").animate({ scrollTop: 700 }, 1000); });
     
 
 //show menu depending the position of the screen

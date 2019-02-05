@@ -290,6 +290,7 @@ background-attachment: fixed;
 .pixabay-section{
     display: none;
     height: 100vh;
+    overflow: visible;
     
 }
 
