@@ -136,10 +136,14 @@ $('.user-images').click(function(){
          
         $(".pixabayContenedor").html("");
         $(".pixabayContenedor").append('<h5 class=\'random-h3\'>*Users who have chosen this mood</h5>');
-        data.results.forEach(element => {
+        let interval = 200;
+        data.results.forEach((element,index=1000) => {
        
-       $(".pixabayContenedor").append("<li class=\"cuartos\"><a><img src=\""+element.picture.large+" \"class='random-size'></a><h3 class='random-h3'>"+element.name.first+" "+element.name.last +"</h3></li>")
-      
+            setTimeout(function () {
+              $(".pixabayContenedor").append("<li class=\"cuartos\"><a><img src=\""+element.picture.large+" \"class='random-size'></a><h3 class='random-h3'>"+element.name.first+" "+element.name.last +"</h3></li>")
+            }, index*interval);
+        
+        
         });
           
         }
@@ -171,7 +175,22 @@ $('.quotes-images').click(function(){
 
 
 });
-        
+      
 
+
+
+/* testing new features
+
+mySong.forEach((x, index = 1000)=>{
+
+    setTimeout(function () {
+
+       
+
+    }, index * interval);
+
+
+});
+*/
 
 });
