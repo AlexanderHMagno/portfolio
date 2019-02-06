@@ -94,6 +94,7 @@ $.ajax({
 url: url_image,
 method: 'GET',
 }).done(function(img_search) {
+  $('.hidden-group').css('display','block');
   $('.arrow-down').css('display','block');
   $('.mood-images').css('background','rgba(128, 128, 128, 0.247');
   $(".quotes-images").css('background','transparent');
