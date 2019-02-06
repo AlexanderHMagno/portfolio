@@ -187,7 +187,7 @@ nav{
     width: 100%;
     margin:auto;
     z-index: 9999;
-   /* background-color: var(--brand-color);*/
+    background-color: rgba(102, 101, 101, 0.034);
     opacity: 0.8;
     
 }
@@ -265,7 +265,7 @@ background-attachment: fixed;
 .fa-dice-d20{
     color:gold;
     animation-name: example;
-    animation-duration: 2s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
     
@@ -274,9 +274,9 @@ background-attachment: fixed;
 
 @keyframes example {
     0% {color: var(--brand-color);}
-    25% {color: white;transform: rotate(15deg);}
-    50% {color: white;transform: rotate(0deg);}
-    75% {color: white;transform: rotate(-15deg);}
+    25% {color: white;transform: rotate(90deg);}
+    50% {color: white;transform: rotate(180deg);}
+    75% {color: white;transform: rotate(360deg);}
     100% {color: var(--brand-color);}
   }
 

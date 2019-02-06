@@ -66,9 +66,9 @@ $('.arrow-down').click(function(){
 
 window.onscroll = function (e) {  
 let position = $(".pixabay-section");
-   
+
 //it will detect the position for showing the menu
-position[0].offsetTop-10<window.pageYOffset?$('nav').show("fast"):$('nav').hide(1000);
+position[0].offsetTop-10<window.pageYOffset&&position[0].offsetTop>1?$('nav').show("fast"):$('nav').css('display','none');
 
 //it will show the characteristics
 ($('.caracteristicas')[0].offsetTop-200 < window.pageYOffset)?$(".c-info").show(2000):""  /* $(".c-info").hide(3000)*/;
