@@ -1,7 +1,6 @@
+
+
 $(function() {
-
-    
-
 
 //moodes
 let imagesMood = "";
@@ -58,7 +57,9 @@ $('#choseMode').click(function(){
 
 
 $('.arrow-down').click(function(){
-    $("HTML, BODY").animate({ scrollTop: $('.pixabay-section')[0].offsetTop }, 1000); });
+    $(this).hide();
+     $("HTML, BODY").animate({ scrollTop: $('.pixabay-section')[0].offsetTop }, 1000); });
+     
     
 
 //show menu depending the position of the screen
@@ -135,21 +136,40 @@ $('.user-images').click(function(){
         $(".pixabayContenedor").html("");
         $(".pixabayContenedor").append('<h5 class=\'random-h3\'>*Users who have chosen this mood</h5>');
         data.results.forEach(element => {
-       console.log(element.picture.large);
+       
        $(".pixabayContenedor").append("<li class=\"cuartos\"><a><img src=\""+element.picture.large+" \"class='random-size'></a><h3 class='random-h3'>"+element.name.first+" "+element.name.last +"</h3></li>")
       
         });
           
         }
       });
+      
+      
+
+      
 
 });
 
+//just show the images 
 $('.mood-images').click(function(){
     pixabay(imagesMood);
+   
 });
 
+//just show the quotes
 
+$('.quotes-images').click(function(){
+    
+    $(this).css('background','rgba(128, 128, 128, 0.247');
+    $(".mood-images").css('background','transparent');
+    $(".user-images").css('background','transparent');
+    const choosen_quote = Math.floor(Math.random()*10);
+    const data_quote= quotes[imagesMood][choosen_quote];
+    $(".pixabayContenedor").html(`<h3 class="margin-quotes"><i class="fas fa-quote-left quote-color"></i>${data_quote.quotes}<i class="fas fa-quote-right quote-color"></i></h3><h4 class="author-quote">${data_quote.author}</h4>`);
+
+
+
+});
         
 
 

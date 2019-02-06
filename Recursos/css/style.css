@@ -323,7 +323,7 @@ background-attachment: fixed;
 /*just for pictures of user*/
 
 .random-size{
-    width: 150px !important;
+    width: 100px !important;
     border-radius: 50%;
     position: absolute;
     left:0px;
@@ -332,8 +332,34 @@ background-attachment: fixed;
 
 .random-h3{
     text-align: center;
+    font-size: 0.8rem;
 }
 
+
+
+
+/*Just for quotes*/
+.margin-quotes{
+width: 80%;
+text-align: center;
+margin: auto;
+font-size: 2rem;
+margin-top: 4rem;
+line-height: 3rem;
+}
+
+.quote-color{
+    font-size: 3rem;
+    color: var(--brand-color);
+}
+
+.author-quote{
+    width: 80%;
+    margin: auto;
+    text-align: right;
+    margin: 2rem 0;
+    font-weight: bold;
+}
 /* ==============================
           Caracteristicas
 =================================*/
@@ -476,7 +502,7 @@ margin-left:40px;
 
 .ciudad{ 
 
-    overflow: auto;
+  height: auto;
 }
 
 .ciudad ul {
