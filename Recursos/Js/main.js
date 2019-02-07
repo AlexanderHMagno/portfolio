@@ -193,17 +193,10 @@ $('.quotes-images').click(function(){
 
 
 /* testing new features
-
-mySong.forEach((x, index = 1000)=>{
-
-    setTimeout(function () {
-
-       
-
-    }, index * interval);
-
-
-});
 */
 
+$('a[rel="next"]').click(function(){
+   window.innerWidth<150?"": window.open(this.href, "myWindowName", "left=400,top=200,toolbar=no,width=700,height=400");
+    
+  });
 });
