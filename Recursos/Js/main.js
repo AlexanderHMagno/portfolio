@@ -39,7 +39,20 @@ $('#sad').click(function(){
 
 //toggle the mood menu at the top
 $('.mood-menu').click(function(){
-    $('.mood').toggle();
+
+    let counter = [".a1", ".a2", ".a3", ".a4"];
+    let interval = 200;
+    counter.forEach((element,index=1000) => {
+       
+        setTimeout(function () {
+          $(element).show();
+        }, index*interval);
+    
+    
+    });
+
+    setTimeout(function(){ $('.mood').toggle();$('.animation').hide(); }, 2000,);
+    
     });
 
 $('#choseMode').click(function(){
