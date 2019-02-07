@@ -51,7 +51,7 @@ $('.mood-menu').click(function(){
     
     });
 
-    setTimeout(function(){ $('.mood').toggle();$('.animation').hide(); }, 2000,);
+    setTimeout(function(){ $('.mood').toggle();$('.animation').hide(); }, 3000,);
     
     });
 
