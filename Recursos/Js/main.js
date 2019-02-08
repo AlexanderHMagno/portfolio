@@ -192,11 +192,27 @@ $('.quotes-images').click(function(){
 
 
 
-/* testing new features
+/* Opening a window for the new Projects
 */
 
 $('a[rel="next"]').click(function(){
-   window.innerWidth<150?"": window.open(this.href, "myWindowName", "left=400,top=200,toolbar=no,width=700,height=400");
+   window.innerWidth<750?"": window.open(this.href, "myWindowName", "left=400,top=200,toolbar=no,width=700,height=400");
     
   });
+
+
+
+
+
+ /* moving screen smoothly for the elements inside the main menu nav */
+      $(".location_position").click(function() {
+        let movement = $(this).attr('id')
+        $('html,body').animate({
+            scrollTop: $('.'+ movement).offset().top},
+            750);  
+       });
+
+
+
+
 });

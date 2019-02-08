@@ -27,7 +27,7 @@
 
 <body>
 
-    <header>
+    <header class="home">
                
         <div class="menu-background">
         <div class="wrapper-header">
@@ -62,12 +62,12 @@
         </div>
 
         <nav>
-                <h1 class ="logo">.  AH</h1 >
+                <h5 class ="logo location_position" id="home"><i class="fas fa-arrow-alt-circle-up"></i> AH</h5 >
             <!--<img class="logo" src="Recursos/imagenes/tribeca.png" alt="Logo-tribeca">-->
             <ul class="nav-principal">
-                <li><a href="#caracteristicas">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a id="caracteristicas" class="location_position">Skills</a></li>
+                <li><a id="projects" class="location_position">Projects</a></li>
+                <li><a id="contact-me" class="location_position">Contact</a></li>
             </ul>
         </nav>
     
@@ -91,7 +91,7 @@
 
 
 
-    <section class="caracteristicas" id="caracteristicas">
+    <section class="caracteristicas">
         <div class="c-container">
             <h2> Skills</h2>
             <p class="c-paragrafo">Some of them</p>
@@ -138,7 +138,7 @@
 
 
 
-    <section class="vivienda-destacada" id="projects">
+    <section class="vivienda-destacada projects">
 
         <h2>Projects</h2>
         <div class="foto-casas">
@@ -152,82 +152,65 @@
             <ul class="f-contenedor">
                 <li><a rel="next" href="https://alexanderhmagno.github.io/nasa/" target="_blank"><img src="Recursos/imagenes/Projectos/NASA.jpg" alt="Nasa Project"></a></li>
                 <li><a rel="next" href="https://alexanderhmagno.github.io/ping-pong/" target="_blank"><img src="Recursos/imagenes/Projectos/pong.png" alt="Laser Pong Game"></a></li>
-                <li><a rel="next" href="http://localhost/quotes/" target="_blank"> <img src="Recursos/imagenes/Projectos/quotes.png" alt="Quotes"></a></li>
-                <li><a rel="next" href="http://localhost/inhabitent/" target="_blank"><img src="Recursos/imagenes/Projectos/inhabitent.png" alt="Inhabitent"></a></li>
+                <li><a rel="next" href="https://github.com/AlexanderHMagno/quotes" target="_blank"> <img src="Recursos/imagenes/Projectos/quotes.png" alt="Quotes"></a></li>
+                <li><a rel="next" href="https://github.com/AlexanderHMagno/inhabitent" target="_blank"><img src="Recursos/imagenes/Projectos/inhabitent.png" alt="Inhabitent"></a></li>
             </ul>
         </div>
     </section>
 
    
 
-
-    <section class="registra">
-        <h2>Responsive Web developer</h2>
-        <div class="registra-contenedor">
-            <div class="col span-1-of-2">
-                <img src="Recursos/imagenes/Celular/mockup cellphone-light.png" alt="tribeca en celular">
-            </div>
-            <div class="col span-1-of-2">
-                <h3>Any Device</h3>
-                <p><i class="fas fa-mobile-alt"></i>MQuery</p>
-                <p><i class="far fa-images"></i> SmartPhone</p>
-                <p><i class="fas fa-video"></i>Tablet</p>
-                <p><i class="fas fa-comment-alt"></i>Desktop.</p>
-                <a class="btn btn-completo">Try it</a>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="plan">
+    <section class="plan contact-me">
         <h2> Development plans</h2>
 
         <div class="plan-contenedor">
 
             <div class="modulo-plan">
                 <div class="plan-titulo">
-                    <p>Quincenal</p>
-                    <h3>$30</h3>
+                    <p>HTML & CSS</p>
+                    <h3><i class="fab fa-connectdevelop"></i></h3>
                 </div>
                 <div class="plan-cuerpo">
 
-                    <p><i class="fas fa-star"></i>Publica durante 15 dias</p>
-                    <p><i class="fas fa-star"></i>Recibe pre-alertas</p>
-                    <p><i class="fas fa-star"></i>$2 costo diario</p>
+                    <p><i class="fas fa-star"></i>Sass</p>
+                    <p><i class="fas fa-star"></i>Mquery</p>
+                    <p><i class="fas fa-star"></i>CSS Grid</p>
+                    <p><i class="fas fa-star"></i>Gulp</p>
                     <br>
-                    <a class="btn btn-transparente">Publica</a>
+                    <a class="btn btn-transparente">Contact me</a>
                 </div>
             </div>
 
             <div class="modulo-plan">
                 <div class="plan-titulo">
-                    <p>Mas vendido</p>
-                    <h3>$50</h3>
+                    <p>JavaScript</p>
+                    <h3> <i class="fab fa-js-square"></i></h3>
                 </div>
                 <div class="plan-cuerpo">
 
-                    <p><i class="fas fa-star"></i>Publica durante 30 dias</p>
-                    <p><i class="fas fa-star"></i>Recibe pre-alertas</p>
-                    <p><i class="fas fa-star"></i>Administra tus contactos</p>
-                    <p><i class="fas fa-star"></i>$1.6 costo diario</p>
+                    <p><i class="fas fa-star"></i>Vanilla</p>
+                    <p><i class="fas fa-star"></i>Jquery</p>
+                    <p><i class="fas fa-star"></i>Rest APIs</p>
+                    <p><i class="fas fa-star"></i>JSON</p>
+                    <p><i class="fas fa-star"></i>OOP</p>
                     <br>
-                    <a class="btn btn-completo">Publica</a>
+                    <a class="btn btn-completo">Contact me</a>
                 </div>
             </div>
 
             <div class="modulo-plan">
                 <div class="plan-titulo">
-                    <p>Semanal</p>
-                    <h3>$21</h3>
+                    <p>Wordpress</p>
+                    <h3><i class="fab fa-wordpress"></i></h3>
                 </div>
                 <div class="plan-cuerpo">
 
-                    <p><i class="fas fa-star"></i>Publica durante 7 dias</p>
-                    <p><i class="fas fa-star"></i>Recibe pre-alertas</p>
-                    <p><i class="fas fa-star"></i>$3 costo diario</p>
+                    <p><i class="fas fa-star"></i>Custom Themes</p>
+                    <p><i class="fas fa-star"></i>WP Database</p>
+                    <p><i class="fas fa-star"></i>OOP</p>
+                    <p><i class="fas fa-star"></i>Plugins and Widgets</p>
                     <br>
-                    <a class="btn btn-transparente">Publica</a>
+                    <a class="btn btn-transparente">Contact me</a>
                 </div>
             </div>
         </div>
@@ -240,12 +223,11 @@
         <div class="politicas">
             <ul>
 
-                <li><a>POLÍTICA Y TÉRMINOS</a></li>
-                <li><a>AVISO DE PRIVACIDAD</a></li>
-                <li><a>POLÍTICA DATOS DE NAVEGACIÓN</a></li>
-                <li><a>LÍNEA ÉTICA</a></li>
-                <li><a>QUEJAS Y RECLAMOS</a></li>
-                <li><a>AYUDA</a></li>
+                <li><a rel="next" href="https://www.lifewire.com/are-web-designs-html-copyright-protected-3466821" target="_blank">Copyright</a></li>
+                <li><a rel="next" href="https://www.udemy.com/diseno-paginas-web/" target="_blank">Udemy Courses</a></li>
+                <li><a rel="next" href="https://www.youtube.com/channel/UCdDzDETPnxsx4bE_p4TdSWQ" target="_blank">Youtube Channel</a></li>
+                <li><a rel="next" href="https://www.smashingmagazine.com/2018/03/using-ethics-in-web-design/" target="_blank">Ethics</a></li>
+                <li><a rel="next" href="https://www.freecodecamp.org/" target="_blank">Learn 4 free</a></li>
 
 
             </ul>
@@ -259,12 +241,13 @@
         </div>
 
         <div class="social-media">
-            <h4>Siguenos en:</h4>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-pinterest"></i>
-            <i class="fab fa-google-plus-g"></i>
+            <h4>Connect with me:</h4>
+            <a rel="next" href="https://www.linkedin.com/in/alexanderhortua/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a rel="next" href="https://www.udemy.com/diseno-paginas-web/" target="_blank"><i class="fas fa-chalkboard-teacher"></i></a>
+            <a rel="next" href="https://www.youtube.com/channel/UCdDzDETPnxsx4bE_p4TdSWQ" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a rel="next" href="https://app.codesignal.com/profile/alexander745" target="_blank"><i class="fas fa-laptop-code"></i></a>
+            <a rel="next" href="https://github.com/AlexanderHMagno" target="_blank"><i class="fab fa-github"></i></a>
+            
 
         </div>
     </footer>

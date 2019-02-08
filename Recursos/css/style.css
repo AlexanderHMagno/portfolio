@@ -15,7 +15,7 @@
 :root{
 
     --brand-color: #3498db;
-    --brand-sombra:#246A99;
+    --brand-sombra:rgb(0, 0, 0);
     --brand-image:"url('imagenes/Alex2.jpg')";
 }
 
@@ -158,6 +158,7 @@ header{
  border-radius:200px;
  color:white;
  transition: background-color 0.4s,border 0.4s,color 0.4s;
+ cursor: pointer;
 }
 
 
@@ -197,7 +198,11 @@ nav{
 .logo{
     float:left;
     width: 10%;
+    margin-left: 20px;
     min-width: 100px;
+    margin-top: 10px;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
 .wrapper-header{
@@ -668,6 +673,15 @@ footer{
     top:30px;
     margin:auto;
     text-align: center;
+}
+
+.politicas a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+.politicas a:hover{
+    color: var(--brand-color);
 }
 
 .politicas::after{
