@@ -181,9 +181,11 @@ $('.quotes-images').click(function(){
     $(this).css('background','rgba(128, 128, 128, 0.247');
     $(".mood-images").css('background','transparent');
     $(".user-images").css('background','transparent');
+    $(".pixabayContenedor").html("");
+    $(".pixabayContenedor").append('<h5 class=\'random-h3\'>*Clik again for another Quote</h5>');
     const choosen_quote = Math.floor(Math.random()*10);
     const data_quote= quotes[imagesMood][choosen_quote];
-    $(".pixabayContenedor").html(`<h3 class="margin-quotes"><i class="fas fa-quote-left quote-color"></i>${data_quote.quotes}<i class="fas fa-quote-right quote-color"></i></h3><h4 class="author-quote">${data_quote.author}</h4>`);
+    $(".pixabayContenedor").append(`<h3 class="margin-quotes"><i class="fas fa-quote-left quote-color"></i>${data_quote.quotes}<i class="fas fa-quote-right quote-color"></i></h3><h4 class="author-quote">${data_quote.author}</h4>`);
 
 
 
@@ -221,20 +223,22 @@ $('.btn').click(function(){
 $('.contact-form').css('display','flex');
 
 //raining effect 
+/*
+for(let i = 0;i<600; i++){
 
-for(let i = 0;i<400; i++){
-
-    let position_height = Math.random()*95; //Math.ceil(Math.random()*window.innerHeight);
-    let position_width = Math.random()*95;//Math.ceil(Math.random()*window.innerWidth);
- 
+    let position_height = Math.random()*100; //Math.ceil(Math.random()*window.innerHeight);
+    let position_width = Math.random()*100;//Math.ceil(Math.random()*window.innerWidth);
+    let empire_choosen = Object.keys(empires)[Math.ceil(Math.random()*(Object.keys(empires).length-1))];
+    console.log(empire_choosen);
+    
     if(i%2==0){
-        $('.contact-form').append(`<div rel="${i}" class="drop planet" style="top:${position_height}%; left:${position_width}%;"><i class="fas fa-globe-americas"></i></div>`)
-        }else{$('.contact-form').append(`<div rel="${i}" class="drop ship" style="top:${position_height}%; left:${position_width}%; animation: raining;"><i class="fab fa-galactic-senate"></i></div>`)
+        $('.contact-form').append(`<div rel="${i}" class="drop planet ${empire_choosen}" style="top:${position_height}%; left:${position_width}%;"><i class="fas fa-globe-americas"></i></div>`)
+        }else{$('.contact-form').append(`<div rel="${i}" class="drop ship" style="top:${position_height}%; color:${(empires[empire_choosen].color)}; left:${position_width}%; animation: raining;">${(empires[empire_choosen].ship)}</i></div>`)
     }
     
 }
 
-
+*/
 
 
 });

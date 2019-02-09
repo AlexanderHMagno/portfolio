@@ -53,3 +53,18 @@
     
     }
     
+
+    const empires = {
+
+    'senate': {color:'#f1c40f',
+ship:'<i class="fab fa-galactic-senate"></i>'},
+    'republic':{color:'#e74c3c',
+ship:'<i class="fab fa-galactic-republic"></i>'},
+    'empire':{color: '#2ecc71',
+ship:'<i class="fab fa-empire"></i>'},
+    'humans':{color: '#3498db',
+ship:'<i class="fas fa-dragon"></i>'}
+
+
+
+    }

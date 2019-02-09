@@ -666,10 +666,12 @@ padding-top:60px;
     animation: Gradient;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     color: white;
+    overflow: hidden;
 
 }
-/*
+
 @keyframes Gradient {
 	0% {
 		background-color: #f1c40f;
@@ -684,12 +686,28 @@ padding-top:60px;
 		background-color: #3498db;
 	}
 }
-*/
+
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    z-index: 9999;
+}
+
+.contact-form form>*{
+    border: none;
+    border-radius: 4px;
+    
+}
+
+
 
 .drop{
     position: absolute;
     animation: raining;
-    animation-duration: 10s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     border-radius: 50%;
     animation-direction: alternate;
@@ -710,7 +728,7 @@ padding-top:60px;
 
 @keyframes raining {
 	0% {
-		color: gold;text-shadow: 1px 1px gold;
+		color: gold;
     }
     
     25% {
@@ -726,7 +744,7 @@ padding-top:60px;
     }
 	
     100% {
-		color:purple;border-radius: 100%;
+		color:initial;transform: scale(2);
 	}
 }
 
