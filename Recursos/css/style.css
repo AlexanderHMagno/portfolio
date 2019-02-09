@@ -152,7 +152,7 @@ header{
 
 .btn{ 
  display:inline-block;
- padding:10px 30px;
+ padding:10px 13px;
  text-decoration:none;
  border:1px solid var(--brand-color);
  border-radius:200px;
@@ -225,6 +225,7 @@ background-attachment: fixed;
 
 .nav-principal li{
     display:inline-block;
+    
 }
 
 .nav-principal a{
@@ -237,6 +238,7 @@ background-attachment: fixed;
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.4s;
     padding-bottom: 10px;
+    cursor: pointer;
     
 }
 
@@ -594,6 +596,7 @@ margin-left:40px;
     background-color: #f7f7f7;
     color:black;
     padding-bottom: 60px;
+    position: relative;
 }
 
 .plan-contenedor{
@@ -647,8 +650,109 @@ padding-top:60px;
     width: 60%;
     margin: 15px auto;
     text-align:center;
+    min-width: 123px;
 }
 
+.contact-form{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    animation: Gradient;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    color: white;
+
+}
+/*
+@keyframes Gradient {
+	0% {
+		background-color: #f1c40f;
+	}
+	50% {
+		background-color: #e74c3c;
+	}
+	75% {
+		background-color: #2ecc71;
+    }
+    100% {
+		background-color: #3498db;
+	}
+}
+*/
+
+.drop{
+    position: absolute;
+    animation: raining;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    animation-direction: alternate;
+    color: gold;
+    
+}
+
+.drop i{
+    color: inherit;
+    font-size: 0.1rem !important;
+}
+.drop i:hover{
+    transform: scale(20);
+    cursor: help;
+}
+
+
+
+@keyframes raining {
+	0% {
+		color: gold;text-shadow: 1px 1px gold;
+    }
+    
+    25% {
+		color: #3366ff;
+    }
+    
+    50% {
+		color: #00ff99;
+    }
+    
+    75% {
+		color: #3366ff;
+    }
+	
+    100% {
+		color:purple;border-radius: 100%;
+	}
+}
+
+.contact-form i{
+    /*color:var(--brand-color);*/
+    margin-right: 20px;
+    font-size: 2rem;
+    box-sizing: border-box;
+    width: 30px;
+    text-align: center;
+
+}
+
+.contact-form span{
+    text-transform: lowercase;
+    
+}
+.contact-form a{
+    text-decoration: none;
+    color: white;   
+}
+
+.fa-times-circle:hover{
+color:white;
+cursor: pointer;
+}
 
 /* ==============================
           Footer 

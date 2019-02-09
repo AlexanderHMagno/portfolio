@@ -215,4 +215,31 @@ $('a[rel="next"]').click(function(){
 
 
 
+/* closing contact form*/
+
+$('.btn').click(function(){
+$('.contact-form').css('display','flex');
+
+//raining effect 
+
+for(let i = 0;i<400; i++){
+
+    let position_height = Math.random()*95; //Math.ceil(Math.random()*window.innerHeight);
+    let position_width = Math.random()*95;//Math.ceil(Math.random()*window.innerWidth);
+ 
+    if(i%2==0){
+        $('.contact-form').append(`<div rel="${i}" class="drop planet" style="top:${position_height}%; left:${position_width}%;"><i class="fas fa-globe-americas"></i></div>`)
+        }else{$('.contact-form').append(`<div rel="${i}" class="drop ship" style="top:${position_height}%; left:${position_width}%; animation: raining;"><i class="fab fa-galactic-senate"></i></div>`)
+    }
+    
+}
+
+
+
+
+});
+
+$('.fa-times-circle').click(function(){
+    $('.contact-form').css('display','none');
+})
 });
