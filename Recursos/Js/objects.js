@@ -56,15 +56,60 @@
 
     const empires = {
 
-    'senate': {color:'#f1c40f',
-ship:'<i class="fab fa-galactic-senate"></i>'},
-    'republic':{color:'#e74c3c',
-ship:'<i class="fab fa-galactic-republic"></i>'},
-    'empire':{color: '#2ecc71',
-ship:'<i class="fab fa-empire"></i>'},
-    'humans':{color: '#3498db',
-ship:'<i class="fas fa-dragon"></i>'}
+    'senate': {
+color:'#f1c40f',
+ship:'<img src="Recursos/css/imagenes/SVG/Planets/senate-ship.svg" width="2"></img>',
+planet:'<img src="Recursos/css/imagenes/SVG/Planets/eclipse.svg" width="2">'},
+    
 
+'republic':{
+color:'#e74c3c',
+ship:'<img src="Recursos/css/imagenes/SVG/Planets/spaceship.svg" width="2"></img>',
+planet:'<img src="Recursos/css/imagenes/SVG/Planets/galaxy.svg" width="2">'},
+   
+
+'empire':{
+    
+color: '#2ecc71',
+ship:'<img src="Recursos/css/imagenes/SVG/Planets/rocket.svg" width="2">',
+planet:'<img src="Recursos/css/imagenes/SVG/Planets/satellite.svg" width="2">'},
+    
+
+'humans':{
+color: '#3498db',
+ship:'<img src="Recursos/css/imagenes/SVG/Planets/battleship1.svg" width="2">',
+planet:'<img src="Recursos/css/imagenes/SVG/Planets/venus.svg" width="2">'}
 
 
     }
+
+    const planetas = [
+'<img src="Recursos/css/imagenes/SVG/Planets/planet1.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet2.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet3.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet4.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet5.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet6.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet7.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet8.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet9.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet10.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet11.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet12.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet13.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet14.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet15.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet16.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet17.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet18.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet19.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet20.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet21.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet22.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet23.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet24.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet25.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet26.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet27.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet28.svg" width="2">',
+'<img src="Recursos/css/imagenes/SVG/Planets/planet29.svg" width="2">']

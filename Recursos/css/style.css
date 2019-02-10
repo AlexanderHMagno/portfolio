@@ -704,50 +704,6 @@ padding-top:60px;
 
 
 
-.drop{
-    position: absolute;
-    animation: raining;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    border-radius: 50%;
-    animation-direction: alternate;
-    color: gold;
-    
-}
-
-.drop i{
-    color: inherit;
-    font-size: 0.1rem !important;
-}
-.drop i:hover{
-    transform: scale(20);
-    cursor: help;
-}
-
-
-
-@keyframes raining {
-	0% {
-		color: gold;
-    }
-    
-    25% {
-		color: #3366ff;
-    }
-    
-    50% {
-		color: #00ff99;
-    }
-    
-    75% {
-		color: #3366ff;
-    }
-	
-    100% {
-		color:initial;transform: scale(2);
-	}
-}
-
 .contact-form i{
     /*color:var(--brand-color);*/
     margin-right: 20px;
