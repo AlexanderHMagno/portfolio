@@ -2,6 +2,18 @@
 
 $(function() {
 
+//showing the new project
+
+$('.project-now').hover(function(){
+    $('.project-now-message').css('display','block');
+})
+$('.project-now').mouseleave(function(){
+    $('.project-now-message').css('display','none');
+})
+
+
+
+
 //moodes
 let imagesMood = "";
 

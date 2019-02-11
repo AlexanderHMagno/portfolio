@@ -88,6 +88,28 @@ p{
 /* ==============================
               header
 =================================*/
+.project-now{
+    position: fixed;
+    bottom: 0px;
+    left: 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+    z-index: 99999;
+}
+
+.project-now-message{
+    position: fixed;
+    bottom: 10px;
+    left: 60px;
+    display: none;
+    z-index: 9999;
+}
+
+.project-now:hover{
+    color: var(--brand-color);
+}
+
 header{
     background: linear-gradient(var(--brand-color), rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.712), var(--brand-color));
   
