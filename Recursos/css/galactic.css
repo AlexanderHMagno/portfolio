@@ -280,14 +280,15 @@ text-align: center;
     display: inline-block;
     content: "";
     border: 1px solid white;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .Statistics-bar-full>*{
-    width: 50%;
+    
     background: greenyellow;
-    color: greenyellow;
+    color: black;
     margin-left: -1px;
+    padding: 5px 10px;
 }
 /* ==============================
           Footer 
