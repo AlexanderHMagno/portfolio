@@ -249,6 +249,7 @@ text-align: center;
     background: black;
     padding: 20px 0;
     color: white;
+    overflow: hidden;
 }
 
 .full-stadistics-container{
