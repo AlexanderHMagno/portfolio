@@ -46,7 +46,7 @@ class Planet {
 
     let position_height = Math.random()*100; //Allocation Y
     let position_width = Math.random()*99;//AllocationX
-    let empire_choosen = Object.keys(empires)[Math.ceil(Math.random()*(Object.keys(empires).length)-1)];//Empire Info
+    let empire_choosen = Object.keys(kingdoms)[Math.ceil(Math.random()*(Object.keys(kingdoms).length)-1)];//Empire Info
     
 
     //battleship
@@ -73,7 +73,7 @@ class Planet {
          
         //creates a ship
     ships[empire_choosen+i] = new Spaceship('Ship '+i,empire_choosen,crew, battlePower,EnergyBattle,position_width,position_height);
-    $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships ship select-ship" style="top:${position_height}%; color:${(empires[empire_choosen].color)}; left:${position_width}%; animation: raining;">${(empires[empire_choosen].ship)}</i></div>`)
+    $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships ship select-ship ${empire_choosen}" style="top:${position_height}%; color:${(kingdoms[empire_choosen].color)}; left:${position_width}%; animation: raining;">${(kingdoms[empire_choosen].ship)}</i></div>`)
     }
     
 } // end for
@@ -103,6 +103,65 @@ $('.select-planet').hover(function(){
 })
 
 
-console.log(planets);
+
+//adding data to the main object kingdoms iterating with the main object
+
+Object.keys(kingdoms).forEach(imperio =>{
+let imperioPlanets = 0;
+let imperioInhabitents = 0;
+let shipsKingdom = 0;
+for (var property1 in planets) {
+    if(planets[property1].kingdom==imperio){
+        imperioInhabitents+= planets[property1].crew;
+        imperioPlanets ++;
+    };
+  }
+
+  for (var property2 in ships) {
+    if(ships[property2].kingdom==imperio){
+        shipsKingdom ++;
+    };
+  }
+
+  //adding info to the object;
+kingdoms[imperio].planets = imperioPlanets;
+kingdoms[imperio].Inhabitants = Math.ceil(imperioInhabitents/1000000) +" millions";
+kingdoms[imperio].Army =Math.ceil(imperioInhabitents/10000000) +" FKA";
+kingdoms[imperio].NumberShips = shipsKingdom;
+})
+
+//fetching the data to the screen
+console.log(kingdoms);
+
+Object.keys(kingdoms).forEach(king => {
+
+    $('.group-empire').append(`<div class="kingdom">
+    <h4>${kingdoms[king].name}</h4>
+    <div class="kingdom-resume">
+        <div class="kingdom-logo">
+            ${kingdoms[king].logo}
+        </div>
+        <div class="kingdom-facts">
+            <i class="fas fa-rocket"> ${kingdoms[king].NumberShips}</i>
+            <i class="fas fa-globe-americas"> ${kingdoms[king].planets}</i><br>
+            <i class="fas fa-fist-raised"> ${kingdoms[king].Army}</i>
+            <i class="fas fa-users"> ${kingdoms[king].Inhabitants}</i>
+        </div>
+    </div>
+    <a rel="${kingdoms[king].name.toLowerCase()}" class="selector-kingdom">Show Kingdom</a>
+    
+    </div>`)
+
+});
+
+
+
+$('.selector-kingdom').click(function(){
+   let selection = $(this)[0].attributes[0].nodeValue;
+   $('.ships').hide(2000);
+   $('.'+selection).show(1000);
+   $('.selector-kingdom').html('Show Kingdom')
+   $(this).html("Show Universe");
+})
 
 });

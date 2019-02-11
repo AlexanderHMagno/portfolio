@@ -187,6 +187,7 @@ p{
     justify-content: center;
     align-items: center;
     height: auto;
+    flex-wrap: wrap;
 }
 
 .kingdom{
@@ -197,6 +198,7 @@ p{
     line-height: 1rem;
     border: 1px solid white;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .kingdom h4{

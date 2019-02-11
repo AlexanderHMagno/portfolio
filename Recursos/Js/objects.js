@@ -54,31 +54,48 @@
     }
     
 
-    const empires = {
+    const kingdoms = {
 
     'senate': {
+name:'Senate',
 color:'#f1c40f',
 ship:'<img src="Recursos/css/imagenes/SVG/Planets/senate-ship.svg" width="2"></img>',
-planet:'<img src="Recursos/css/imagenes/SVG/Planets/eclipse.svg" width="2">'},
+logo:'<i class="fab fa-galactic-senate"></i>',
+NumberShips:0,
+planets:0,
+Army:0,
+Inhabitants:0},
     
 
 'republic':{
+name:'Republic',
 color:'#e74c3c',
 ship:'<img src="Recursos/css/imagenes/SVG/Planets/spaceship.svg" width="2"></img>',
-planet:'<img src="Recursos/css/imagenes/SVG/Planets/galaxy.svg" width="2">'},
-   
+logo:' <i class="fab fa-empire"></i>',
+NumberShips:0,
+planets:0,
+Army:0,
+Inhabitants:0}, 
 
-'empire':{
-    
+'gulp':{
+name:'Gulp',
 color: '#2ecc71',
 ship:'<img src="Recursos/css/imagenes/SVG/Planets/rocket.svg" width="2">',
-planet:'<img src="Recursos/css/imagenes/SVG/Planets/satellite.svg" width="2">'},
-    
+logo:'<i class="fab fa-bitcoin"></i>',
+NumberShips:0,
+planets:0,
+Army:0,
+Inhabitants:0},  
 
 'humans':{
+name:'Humans',
 color: '#3498db',
 ship:'<img src="Recursos/css/imagenes/SVG/Planets/battleship1.svg" width="2">',
-planet:'<img src="Recursos/css/imagenes/SVG/Planets/venus.svg" width="2">'}
+logo:'<i class="fab fa-wolf-pack-battalion"></i>',
+NumberShips:0,
+planets:0,
+Army:0,
+Inhabitants:0},
 
 
     }
