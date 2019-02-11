@@ -83,14 +83,14 @@ $('#choseMode').click(function(){
 
 $('.arrow-down').click(function(){
     $(this).hide();
-     $("HTML, BODY").animate({ scrollTop: $('.pixabay-section')[0].offsetTop }, 1000); });
+     $("HTML, BODY").animate({ scrollTop: $('.caracteristicas')[0].offsetTop }, 1000); });
      
     
 
 //show menu depending the position of the screen
 
 window.onscroll = function (e) {  
-let position = $(".pixabay-section");
+let position = $(".caracteristicas");
 
 //it will detect the position for showing the menu
 position[0].offsetTop-10<window.pageYOffset&&position[0].offsetTop>1?$('nav').show("fast"):$('nav').css('display','none');
@@ -119,6 +119,9 @@ $.ajax({
 url: url_image,
 method: 'GET',
 }).done(function(img_search) {
+  $(".c-info").hide();
+  $('.skills-name').html(`${mood} Skills`);
+  $('.projects-name').html(`${mood} Projects`);
   $('.hidden-group').css('display','block');
   $('.arrow-down').css('display','block');
   $('.mood-images').css('background','rgba(128, 128, 128, 0.247');
@@ -194,7 +197,7 @@ $('.quotes-images').click(function(){
     $(".mood-images").css('background','transparent');
     $(".user-images").css('background','transparent');
     $(".pixabayContenedor").html("");
-    $(".pixabayContenedor").append('<h5 class=\'random-h3\'>*Clik again for another Quote</h5>');
+    $(".pixabayContenedor").append('<h5 class=\'random-h3\'>*Click again for another Quote</h5>');
     const choosen_quote = Math.floor(Math.random()*10);
     const data_quote= quotes[imagesMood][choosen_quote];
     $(".pixabayContenedor").append(`<h3 class="margin-quotes"><i class="fas fa-quote-left quote-color"></i>${data_quote.quotes}<i class="fas fa-quote-right quote-color"></i></h3><h4 class="author-quote">${data_quote.author}</h4>`);
