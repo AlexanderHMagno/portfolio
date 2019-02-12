@@ -91,12 +91,24 @@ p{
 
 .battleship{
     height: 200vh;
-    width: 100%vw;
+    width: 100%;
     overflow: hidden;
     background: black;
     position: relative;
 }
 
+.creator{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    z-index: 9999;
+    opacity: 0.2;
+    transition: opacity 1s;
+}
+.creator:hover{
+    opacity: 1;
+}
 
 
 
@@ -105,7 +117,6 @@ p{
     animation: raining;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    border-radius: 50%;
     animation-direction: alternate;
     color: gold;
     
@@ -130,11 +141,76 @@ p{
 
 }
 
+.ship-animationA{
+    animation: rotation;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.ship-animationB{
+    animation: rotationb;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+.ship-animationC{
+    animation: rotationc;
+    animation-duration: 160s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.ship-animationD{
+    animation: rotationd;
+    animation-duration: 200s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+
+@keyframes rotation{
+    0% {transform: translate(-50px,-100px)
+    } 50% {transform: translate(-50px,100px)
+    }
+    100% { transform: translate(200,0px)
+    } 
+
+}
+@keyframes rotationb{
+    0% {transform: translate(-500px,-20px)
+    } 0% {transform: translate(200px,-200px)
+    }  100% {transform: translate(100,80px)
+    } 
+}
+@keyframes rotationc{
+    0% {transform: translate(-10px,-200px)
+    } 25% {transform: translate(-250px,20px)
+    } 50% {transform: translate(0px,200px);transform: scale(2)
+    } 75% {transform: translate(-500px,-20px)
+    }  100% {transform: translate(-20PX,-80px)
+    } 
+}
+@keyframes rotationd{
+    0% {transform: translate(10px,200px)
+    } 25% {transform: translate(250px,-20px)
+    } 50% {transform: translate(0px,-200px)
+    } 75% {transform: translate(-500px,-20px)
+    }  100% {transform: translate(20PX,80px)
+    } 
+}
 
 
 @keyframes raining {
     0% {
+		color:initial;transform: scale(0.2);
+    }
+    25% {
 		color:initial;transform: scale(1);
+    }
+    50% {
+		color:initial;transform: scale(0.5);
 	}
     100% {
 		color:initial;transform: scale(2);
@@ -192,7 +268,7 @@ p{
 
 .kingdom{
     width: 20%;
-    margin-left: 4%;
+    margin-left: 1%;
     color: white;
     text-align: center;
     line-height: 1rem;
@@ -237,6 +313,7 @@ text-align: center;
     display: inline-block;
     margin-bottom: 10px;
     cursor: pointer;
+    max-width: 100%;
 }
 
 
@@ -256,13 +333,16 @@ text-align: center;
 
     display: flex; 
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 90%;
 }
 
 .stats{
     width: 25%;
     margin-left:5%;
+    min-width: 300px;
 }
 
 .Statistics-bar{
@@ -273,7 +353,8 @@ text-align: center;
 
 .statistics-bar span{
     display: inline-block;
-    width: 50px;
+    width: 60px;
+    
 }
 
 .Statistics-bar-full{

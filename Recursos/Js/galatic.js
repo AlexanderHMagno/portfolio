@@ -46,8 +46,18 @@ class Planet {
 
     let position_height = Math.random()*100; //Allocation Y
     let position_width = Math.random()*99;//AllocationX
-    let empire_choosen = Object.keys(kingdoms)[Math.ceil(Math.random()*(Object.keys(kingdoms).length)-1)];//Empire Info
-    
+
+    let empire_choosenb=Object.keys(kingdoms);
+
+    for (let i = empire_choosenb.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = empire_choosenb[i];
+        empire_choosenb[i] = empire_choosenb[j];
+        empire_choosenb[j] = temp;
+    }
+
+    let empire_choosen = empire_choosenb[Math.round(Math.random()*(empire_choosenb.length-1))];//Empire Info
+   
 
     //battleship
     let crew = 1+Math.ceil(Math.random()*20);
@@ -71,10 +81,12 @@ class Planet {
 
         
     }else{
-         
+        
+        let animationShip= ["A","B","C",'D'][Math.round(Math.random()*3)];
+        
         //creates a ship
     ships[empire_choosen+i] = new Spaceship('Ship '+i,empire_choosen,crew, battlePower,EnergyBattle,position_width,position_height);
-    $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships ship select-ship ${empire_choosen}" style="top:${position_height}%; color:${(kingdoms[empire_choosen].color)}; left:${position_width}%; animation: raining;"><img src="Recursos/css/imagenes/SVG/Planets/Ships/spaceship${battleShips[shiplogo]}.svg" width="2"></div>`)
+    $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships ship select-ship ${empire_choosen} ship-animation${animationShip}" style="top:${position_height}%; color:${(kingdoms[empire_choosen].color)}; left:${position_width}%;"><img src="Recursos/css/imagenes/SVG/Planets/Ships/spaceship${battleShips[shiplogo]}.svg" width="2"></div>`)
     }
     
 } // end for
@@ -177,12 +189,12 @@ if (show_universe==0){let selection = $(this)[0].attributes[0].nodeValue;
     $(this).html("Show Universe");
     $('.selector-kingdom').css({"background":"transparent", 'color':'white'});
     $(this).css({"background":"greenyellow", 'color':'black'});
-    $('.ships').hide(2000);
-    $('.'+selection).show(1000);
+    $('.ships').hide();
+    $('.'+selection).show();
     show_universe = 1;
 }
     else{
-        $('.ships').show(1000);
+        $('.ships').show();
         $(this).html("Show Kingdom");
         $(this).css({"background":"transparent", 'color':'white'});
         show_universe = 0;
@@ -205,10 +217,10 @@ statistics_Group.forEach(sGroup=>{
     Object.keys(kingdoms).forEach(king => {
        statistics_string+= `
 <div class="Statistics-bar statistics-planet-Empire">
-    <span>${kingdoms[king].name}</span>
+    <span>${kingdoms[king].name} (${kingdoms[king][sGroup]})</span>
     <div class="Statistics-bar-full">
-        <div style="width:${(kingdoms[king][sGroup]/GLOBAL_STATISTICS[sGroup])*100+20}%">${kingdoms[king][sGroup]} (${Math.ceil((kingdoms[king][sGroup]/GLOBAL_STATISTICS[sGroup])*100)}%)</div>
-    </div>
+        <div style="width:${(kingdoms[king][sGroup]/GLOBAL_STATISTICS[sGroup])*100}%">${Math.round((kingdoms[king][sGroup]/GLOBAL_STATISTICS[sGroup])*100)}%</div>
+        </div>
 </div>`});
 statistics_string+=`</div>`;
 })
@@ -216,5 +228,5 @@ statistics_string+=`</div>`;
 $('.full-stadistics-container').append(statistics_string);
 
 
-console.log(GLOBAL_STATISTICS);
+
 });
