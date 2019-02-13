@@ -118,7 +118,7 @@ const GLOBAL_STATISTICS = {
 const planetas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
 const battleShips = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19];
 const composition = ['cerium (Ce)', 'dysprosium (Dy)', 'erbium (Er)', 'europium (Eu)', 'gadolinium (Gd)', 'holmium (Ho)', 'lanthanum (La)', 'lutetium (Lu)', 'neodymium (Nd)', 'praseodymium (Pr)', 'promethium (Pm)', 'samarium (Sm)', 'scandium (Sc)', 'terbium (Tb)', 'thulium (Tm)', 'ytterbium (Yb)'];
-
+const backgroundIMG = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 const people={};
 
@@ -132,6 +132,7 @@ function getData() {
     function showCrew (param){
         let x = 0;
         param.results.forEach(Element=>{people[`${x}`]={'name' :Element.name.first,'lastName' :Element.name.last, 'picture': Element.picture.large,'city':Element.location.city,'state':Element.location.state};x++});
+    
     }
     
     $.when(getData()).done(showCrew);

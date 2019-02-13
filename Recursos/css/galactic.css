@@ -296,10 +296,48 @@ ships
     width: 60%;
     height: 60%;
     background: url(./imagenes/landscape/1.jpg);
-    background-size: contain;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
     background-repeat: no-repeat;
+    z-index: 99999;
+
     
+}
+
+.planet-title{
+    background: rgba(0, 0, 0, 0.322);
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.planet-information{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 12%;
+}
+
+.planet-information-window{
+    background: rgba(0, 0, 0, 0.13);
+    width: 200px;
+    height: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5rem;
+    text-shadow: 1px 1px azure;
+    font-size: 1.2rem;
+    
+}
+
+.planet-information-window i{
+    font-size: 6rem;
+}
+.planet-information-window span{
+    font-weight: bold;
 }
 
 .close-planet{

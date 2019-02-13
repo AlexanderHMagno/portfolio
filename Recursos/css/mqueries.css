@@ -95,6 +95,17 @@ footer .social-media{
     right: 15%;
 }
 
+
+
+
+
+
+.inside-planet-container{
+    width: 100%;
+    left: 0%;
+    height: 75%;
+}
+
 }
 
 
@@ -257,5 +268,7 @@ Galactic
 .kingdom-logo{
 display: none;
 }
+
+
 
 }

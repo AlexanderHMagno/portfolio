@@ -20,7 +20,7 @@ class Spaceship {
 
 /*Creating the planets*/
 class Planet {
-    constructor(name,kingdom,crew,battlePower,composition,positionX,positionY) {
+    constructor(name,kingdom,crew,battlePower,composition,positionX,positionY,oficialNAme,background) {
         this.name = name;
         this.kingdom = kingdom;
         this.crew = crew;
@@ -28,6 +28,8 @@ class Planet {
         this.composition = composition;
         this.positionX = positionX;
         this.positionY = positionY;
+        this.oficialNAme= oficialNAme;
+        this.background= background;
     }
    
   }
@@ -72,7 +74,7 @@ class Planet {
     let Army = Math.ceil(Inhabitent*0.01);
     let planetlogo = Math.ceil(Math.random()*planetas.length-1);
     let shiplogo = Math.ceil(Math.random()*battleShips.length-1);
-    
+    let backGroundnum = Math.ceil(Math.random()*backgroundIMG.length-1);
     //assigning material composition
     let compositionPlanet = [];
     
@@ -84,10 +86,10 @@ class Planet {
     
     if(i%2==0){
 
-
+       
 
         //creates a planet
-       planets[empire_choosen+i] = new Planet('Planet '+i,empire_choosen,Inhabitent,Army,compositionPlanet,position_width,position_height);
+       planets[empire_choosen+i] = new Planet('Planet '+i,empire_choosen,Inhabitent,Army,compositionPlanet,position_width,position_height,"",backGroundnum);
        $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships planet ${empire_choosen} select-planet" style="top:${position_height}%; left:${position_width}%;"><img src="Recursos/css/imagenes/SVG/Planets/planets/planet${planetas[planetlogo]}.svg" width="2"></div>`);
        
         
@@ -128,9 +130,10 @@ $('.select-ship').mouseleave(function(){
 
 $('.select-planet').hover(function(){
     let information = $(this)[0].attributes[0].nodeValue;
- 
+    let captainAssigned = Math.ceil(Math.random()*999);
+    planets[information]['realName'] = `${people[captainAssigned].state}  ${captainAssigned}`;
     $('.box-info').css({'display':'block', 'top': planets[information].positionY+1+'%','left':planets[information].positionX+1+'%'})
-    $('.box-info-title').html(`<h4><span>Name: </span>${planets[information].name}</h4>`);
+    $('.box-info-title').html(`<h4><span>Name: </span>${planets[information].realName}</h4>`);
     $('.box-info-resumen').html(`<h6><span>Kingdom: </span>${planets[information].kingdom}</h6> <h6><span>Inhabitents: </span>${planets[information].crew}</h6> <h6><span>Combat Army: </span>${planets[information].battlePower}</h6><h6><span>Composition: </span>${planets[information].composition}</h6><h6><span>Latitude: </span>${planets[information].positionX}</h6><h6><span>Longitud: </span>${planets[information].positionY}</h6><div class="open-planet"><span>Click on planet<br> to open.</div>`)
 })
 
@@ -141,8 +144,10 @@ $('.select-planet').mouseleave(function(){
 ///show planet
 
 $('.select-planet').click(function(){
-    let landscape = Math.ceil(Math.random()*5);
-    $('.battleship').append(`<div style="background:url(./Recursos/css/imagenes/landscape/${landscape}.jpg)" class="inside-planet-container"><div class="planet-title"><h1>welcome to ${$(this)[0].attributes[0].nodeValue}</h1></div></div>`)
+   let planetSelected = $(this)[0].attributes[0].nodeValue;
+  
+    $('.box-info').css('display','none');
+    $('.battleship').append(`<div style="background:url(./Recursos/css/imagenes/landscape/${planets[planetSelected].background}.jpg)" class="inside-planet-container"><div class="planet-title"><h1>welcome to ${planets[planetSelected].realName} </h1></div><div class="planet-information"><div class="planet-information-window">${kingdoms[planets[planetSelected].kingdom].logo}<h3>${planets[planetSelected].kingdom}</h3></div><div class="planet-information-window"><h6><span>Composition: </span>${planets[planetSelected].composition}</h6></div><div class="planet-information-window"><h6><span>Inhabitents: </span>${planets[planetSelected].crew}</h6> <h6><span>Combat Army: </span>${planets[planetSelected].battlePower}</h6><h6><span>Latitude: </span>${Math.round(planets[planetSelected].positionX*100)/100}</h6><h6><span>Longitud: </span>${Math.round(planets[planetSelected].positionY*100)/100}</h6></div></div></div>`)
     $('.close-planet').css({'display':'block','left':'20%','top':'16%'})
 })
 
@@ -270,11 +275,6 @@ $('.full-stadistics-container').append(statistics_string);
 
 
 
-// addin the crew to the ships and planets. 
-
-$.when(getData()).done(showCrew);
-        
-        
 
 });
 
