@@ -99,8 +99,8 @@ p{
 
 .creator{
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 48%;
     width: 50px;
     z-index: 9999;
     opacity: 0.2;
@@ -111,11 +111,15 @@ p{
 }
 
 
+/*======================
+ships
+=========================*/
+
 
 .ships{
     position: absolute;
     animation: raining;
-    animation-duration: 2s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     color: gold;
@@ -128,17 +132,40 @@ p{
 
 .ships img{
     color: inherit;
-    width: 2px;
+    width: 10px;
     z-index: 1;
+    padding: 4px;
+    
     
 }
 .ships img:hover{
     transform: scale(20);
-    width: 4px;
     cursor: help;
     overflow: visible;
     z-index: 9999;
+    padding: 1px;
+    
+}
 
+.logo-captain-contenedor{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    background: linear-gradient(rgba(172, 255, 47, 0.418)) ;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    border-top-right-radius: 10px;
+}
+.logo-captain{
+    border-radius:50%;
+    width: 50px;
+    
+   
+}
+
+.icon-captain-empreium i{
+    font-size: 3rem;
 }
 
 .ship-animationA{
@@ -150,10 +177,10 @@ p{
 
 .ship-animationB{
     animation: rotationb;
-    animation-duration: 100s;
+    animation-duration: 50s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
-    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); 
+    
 }
 .ship-animationC{
     animation: rotationc;
@@ -185,9 +212,9 @@ p{
     } 
 }
 @keyframes rotationc{
-    0% {transform: translate(-10px,-200px)
+    0% {transform: translate(10px,200px)
     } 25% {transform: translate(-250px,20px)
-    } 50% {transform: translate(0px,200px);transform: scale(2)
+    } 50% {transform: translate(0px,200px)
     } 75% {transform: translate(-500px,-20px)
     }  100% {transform: translate(-20PX,-80px)
     } 
@@ -224,6 +251,7 @@ p{
 =================================*/
 .box-info{
     width: auto;
+    max-width: 200px;
     height: 200px;
     position: absolute;
     display: none;

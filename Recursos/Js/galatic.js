@@ -5,7 +5,7 @@ $(function() {
 /* Creating the spaceship*/
 
 class Spaceship {
-    constructor(name,kingdom,crew,battlePower,Energy,positionX,positionY) {
+    constructor(name,kingdom,crew,battlePower,Energy,positionX,positionY,crewMember) {
         this.name = name;
         this.kingdom = kingdom;
         this.crew = crew;
@@ -13,6 +13,7 @@ class Spaceship {
         this.Energy = Energy;
         this.positionX = positionX;
         this.positionY = positionY;
+        this.crewMember = crewMember;
     }
    
   }
@@ -71,19 +72,28 @@ class Planet {
     let Army = Math.ceil(Inhabitent*0.01);
     let planetlogo = Math.ceil(Math.random()*planetas.length-1);
     let shiplogo = Math.ceil(Math.random()*battleShips.length-1);
+    
+    //assigning material composition
+    let compositionPlanet = [];
+    
+// end of composition creation. 
+  for (let m = 0 ; m<5;m++){
+      compositionPlanet.push(composition[Math.ceil(Math.random()*composition.length-1)]);
+  }
 
     
     if(i%2==0){
 
-        //creates a planet
-       planets[empire_choosen+i] = new Planet('Planet '+i,empire_choosen,Inhabitent,Army,'Earth',position_width,position_height);
-       $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships planet ${empire_choosen} select-planet" style="top:${position_height}%; left:${position_width}%;"><img src="Recursos/css/imagenes/SVG/Planets/planets/planet${planetas[planetlogo]}.svg" width="2"></div>`);
 
+
+        //creates a planet
+       planets[empire_choosen+i] = new Planet('Planet '+i,empire_choosen,Inhabitent,Army,compositionPlanet,position_width,position_height);
+       $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships planet ${empire_choosen} select-planet" style="top:${position_height}%; left:${position_width}%;"><img src="Recursos/css/imagenes/SVG/Planets/planets/planet${planetas[planetlogo]}.svg" width="2"></div>`);
+       
         
     }else{
         
         let animationShip= ["A","B","C",'D'][Math.round(Math.random()*3)];
-        
         //creates a ship
     ships[empire_choosen+i] = new Spaceship('Ship '+i,empire_choosen,crew, battlePower,EnergyBattle,position_width,position_height);
     $('.battleship').append(`<div rel="${empire_choosen+i}" class="ships ship select-ship ${empire_choosen} ship-animation${animationShip}" style="top:${position_height}%; color:${(kingdoms[empire_choosen].color)}; left:${position_width}%;"><img src="Recursos/css/imagenes/SVG/Planets/Ships/spaceship${battleShips[shiplogo]}.svg" width="2"></div>`)
@@ -98,10 +108,19 @@ class Planet {
 
 $('.select-ship').hover(function(){
     let information = $(this)[0].attributes[0].nodeValue;
+    let captainAssigned = Math.ceil(Math.random()*999);
+    let currentPosition = $(this).position();
     
-    $('.box-info').css({'display':'block', 'top': ships[information].positionY+1+'%','left':ships[information].positionX+1+'%'})
-    $('.box-info-title').html(`<h4><span>Name: </span>${ships[information].name}</h4>`);
-    $('.box-info-resumen').html(`<h6><span>Kingdom: </span>${ships[information].kingdom}</h6> <h6><span>Crew: </span>${ships[information].crew}</h6> <h6><span>Battle Power: </span>${ships[information].battlePower}</h6><h6><span>PositionX: </span>${ships[information].positionX}</h6><h6><span>PositionY: </span>${ships[information].positionY}</h6>`)
+   
+    
+    $('.box-info').css({'display':'block', 'top': currentPosition.top,'left': currentPosition.left+20})
+    $('.box-info-title').html(`<h4><span>Name: </span>${people[captainAssigned].city}</h4>`);
+    $('.box-info-resumen').html(`<div style="background:linear-gradient(-90deg,${kingdoms[`${ships[information].kingdom}`].color},rgba(172, 255, 47, 0.418))"class="logo-captain-contenedor"><img class="logo-captain" src="${people[captainAssigned].picture}"> <div class="icon-captain-empreium">${kingdoms[`${ships[information].kingdom}`].logo}</div></div><h6><span>captain: </span>${people[captainAssigned].name} ${people[captainAssigned].lastName}</h6><h6><span>Kingdom: </span>${ships[information].kingdom}</h6> <h6><span>Crew: </span>${ships[information].crew}</h6> <h6><span>Battle Power: </span>${ships[information].battlePower}</h6><h6><span>latitude: </span>${ships[information].positionX}</h6><h6><span>Longitud: </span>${ships[information].positionY}</h6>`)
+})
+
+$('.select-ship').mouseleave(function(){
+    $('.box-info').css({'display':'none'})
+   
 })
 
 
@@ -112,9 +131,13 @@ $('.select-planet').hover(function(){
  
     $('.box-info').css({'display':'block', 'top': planets[information].positionY+1+'%','left':planets[information].positionX+1+'%'})
     $('.box-info-title').html(`<h4><span>Name: </span>${planets[information].name}</h4>`);
-    $('.box-info-resumen').html(`<h6><span>Kingdom: </span>${planets[information].kingdom}</h6> <h6><span>Inhabitents: </span>${planets[information].crew}</h6> <h6><span>Combat Army: </span>${planets[information].battlePower}</h6><h6><span>Composition: </span>${planets[information].composition}</h6><h6><span>PositionX: </span>${planets[information].positionX}</h6><h6><span>PositionY: </span>${planets[information].positionY}</h6>`)
+    $('.box-info-resumen').html(`<h6><span>Kingdom: </span>${planets[information].kingdom}</h6> <h6><span>Inhabitents: </span>${planets[information].crew}</h6> <h6><span>Combat Army: </span>${planets[information].battlePower}</h6><h6><span>Composition: </span>${planets[information].composition}</h6><h6><span>Latitude: </span>${planets[information].positionX}</h6><h6><span>Longitud: </span>${planets[information].positionY}</h6>`)
 })
 
+$('.select-planet').mouseleave(function(){
+    $('.box-info').css({'display':'none'})
+   
+})
 
 
 //adding data to the main object kingdoms iterating with the main object
@@ -229,4 +252,12 @@ $('.full-stadistics-container').append(statistics_string);
 
 
 
+
+// addin the crew to the ships and planets. 
+
+$.when(getData()).done(showCrew);
+        
+        
+
 });
+
