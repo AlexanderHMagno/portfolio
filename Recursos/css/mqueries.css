@@ -269,6 +269,12 @@ Galactic
 display: none;
 }
 
+.inside-planet-container{
+    top: 10%;
+}
 
+.planet-information{
+    flex-wrap: wrap;
+}
 
 }
