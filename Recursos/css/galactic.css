@@ -140,7 +140,7 @@ ships
 }
 .ships img:hover{
     transform: scale(20);
-    cursor: help;
+    cursor: pointer;
     overflow: visible;
     z-index: 9999;
     padding: 1px;
@@ -277,6 +277,42 @@ ships
  font-weight: bold;
 }
 
+
+.open-planet{
+    cursor: pointer;
+    text-align: center;
+    background: greenyellow;
+    color: black;
+    font-weight: bold;
+    
+}
+
+
+
+.inside-planet-container{
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background: url(./imagenes/landscape/1.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.close-planet{
+    cursor: pointer;
+    width: 10px;
+    background: red;
+    color: black;
+    font-weight: bold;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+
+}
 
 /* ==============================
          Empire Resumen

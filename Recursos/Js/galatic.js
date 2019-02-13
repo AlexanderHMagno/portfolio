@@ -131,13 +131,30 @@ $('.select-planet').hover(function(){
  
     $('.box-info').css({'display':'block', 'top': planets[information].positionY+1+'%','left':planets[information].positionX+1+'%'})
     $('.box-info-title').html(`<h4><span>Name: </span>${planets[information].name}</h4>`);
-    $('.box-info-resumen').html(`<h6><span>Kingdom: </span>${planets[information].kingdom}</h6> <h6><span>Inhabitents: </span>${planets[information].crew}</h6> <h6><span>Combat Army: </span>${planets[information].battlePower}</h6><h6><span>Composition: </span>${planets[information].composition}</h6><h6><span>Latitude: </span>${planets[information].positionX}</h6><h6><span>Longitud: </span>${planets[information].positionY}</h6>`)
+    $('.box-info-resumen').html(`<h6><span>Kingdom: </span>${planets[information].kingdom}</h6> <h6><span>Inhabitents: </span>${planets[information].crew}</h6> <h6><span>Combat Army: </span>${planets[information].battlePower}</h6><h6><span>Composition: </span>${planets[information].composition}</h6><h6><span>Latitude: </span>${planets[information].positionX}</h6><h6><span>Longitud: </span>${planets[information].positionY}</h6><div class="open-planet"><span>Click on planet<br> to open.</div>`)
 })
 
 $('.select-planet').mouseleave(function(){
     $('.box-info').css({'display':'none'})
-   
+   })
+
+///show planet
+
+$('.select-planet').click(function(){
+    let landscape = Math.ceil(Math.random()*5);
+    $('.battleship').append(`<div style="background:url(./Recursos/css/imagenes/landscape/${landscape}.jpg)" class="inside-planet-container"><div class="planet-title"><h1>welcome to ${$(this)[0].attributes[0].nodeValue}</h1></div></div>`)
+    $('.close-planet').css({'display':'block','left':'20%','top':'16%'})
 })
+
+
+$(".close-planet").click(function(){
+    
+    $('.inside-planet-container').css('display','none');
+    $(this).css('display','none');
+
+});
+
+
 
 
 //adding data to the main object kingdoms iterating with the main object
