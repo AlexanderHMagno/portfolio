@@ -274,7 +274,7 @@ $('.full-stadistics-container').append(statistics_string);
 
 
 
-
+console.log(planets);
 
 });
 
